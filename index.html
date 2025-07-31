@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>mabh.fx</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+<body>
+  <!-- Section 1 -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="#section1" class="nav-link">Home</a>
+        <a href="#section2" class="nav-link">About</a>
+      </div>
+
+      <div class="logo">
+        <img src="Images/logo.png" alt="Logo" />
+      </div>
+
+      <div class="nav-right">
+        <a href="#section3" class="nav-link">Services</a>
+        <a href="#section4" class="nav-link">Contact Us</a>
+      </div>
+
+      
+      <!-- Hamburger -->
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars" id="hamburgerIcon"></i>
+      </div>
+
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#section1" class="mobile-link">Home</a>
+      <a href="#section2" class="mobile-link">About</a>
+      <a href="#section3" class="mobile-link">Services</a>
+      <a href="#section4" class="mobile-link">Contact Us</a>
+    </div>
+  </header>
+
+<section id="section1" class="hero-section">
+
+  <!-- Glow Shadows -->
+  <img src="Images/GlowLeft.png" class="glow-left" alt="Glow Left" />
+  <img src="Images/GlowRight.png" class="glow-right" alt="Glow Right" />
+
+  <!-- Left Content -->
+  <div class="left-content">
+    <!-- Middle -->
+    <div class="left-middle">
+      <div class="know-more-box">
+        <span>Know More!</span>
+        <div class="arrow-box">
+          <span class="arrow-icon">➜</span>
+        </div>
+      </div>
+      <p class="left-tagline">Creating Stories That Move Visually And Emotionally</p>
+    </div>
+
+    <!-- Bottom -->
+    <div class="left-bottom">
+      <div class="pill-boxes">
+        <div class="pill">Design</div>
+        <div class="pill">Edit</div>
+        <div class="pill">Elevate</div>
+      </div>
+
+      <div class="left-stats-row">
+        <div class="left-col1">
+          <div class="stat">
+            <div class="pink">50+</div>
+            <div class="white">Brands Served</div>
+          </div>
+        </div>
+        <div class="left-col2">
+          <div class="bg-circle circle-img1"></div>
+          <div class="bg-circle circle-img2"></div>
+          <div class="bg-circle circle-img3"></div>
+          <div class="pink-arrow">➜</div>
+
+        </div>
+        
+      </div>
+                <div class="learn-more">
+            Learn More <span class="arrow-45">➜</span>
+          </div>
+    </div>
+  </div>
+
+    <!-- Right Content -->
+  <div class="right-content">
+    <!-- Middle Stats -->
+    <div class="right-middle">
+      <div class="stat">
+        <div class="white">Brands Served</div>
+        <div class="pink">50+</div>
+      </div>
+      <div class="stat">
+        <div class="white">Designs Delivered</div>
+        <div class="pink">450+</div>
+      </div>
+      <div class="stat">
+        <div class="white">Client Retention Rate</div>
+        <div class="pink">96%</div>
+      </div>
+    </div>
+
+    <!-- Bottom Text/Image -->
+    <div class="right-bottom">
+      <div class="right-col1">
+        Transform your brand with powerful visual solutions
+      </div>
+      <div class="right-col2">
+        <div class="bg-box"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Middle Content -->
+<!-- Section 1 Middle Orbit Layout -->
+<div class="concentric-wrapper">
+  <!-- Optional Heading in Center -->
+  <div class="center-heading">
+    <h3>The Smart Way to Create <span>Visual Impact</span></h3>
+  </div>
+
+  <!-- Innermost Orbit -->
+  <div class="circle-image image1">
+    <img src="Images/Ellipse1.png" alt="Orbit 1" />
+    <div class="orbit orbit1">
+      <img src="Images/Star.png" alt="Orbiting Star 1" />
+    </div>
+  </div>
+
+  <!-- Middle Orbit -->
+  <div class="circle-image image2">
+    <img src="Images/Ellipse2.png" alt="Orbit 2" />
+    <div class="orbit orbit2">
+      <img src="Images/Star.png" alt="Orbiting Star 2" />
+    </div>
+  </div>
+
+  <!-- Outermost Orbit -->
+  <div class="circle-image image3">
+    <img src="Images/Ellipse3.png" alt="Orbit 3" />
+    <div class="orbit orbit3">
+      <img src="Images/Star.png" alt="Orbiting Star 3" />
+    </div>
+  </div>
+
+  <!-- Bottom center bouncing arrow -->
+  <div class="bottom-center-icon">
+    <img src="Images/TopArrow.png" alt="Scroll to Section 2" class="bouncing-arrow scroll-arrow"
+      onclick="document.querySelector('#section2').scrollIntoView({ behavior: 'smooth' })" />
+  </div>
+</div>
+
+
+</section>
+
+<!-- Section 2 -->
+<section id="section2" class="section2">
+  <div class="section2-container">
+    
+    <!-- Column 1 -->
+    <div class="column col-left">
+      <div class="image-box">
+        <div class="inner-text-box">
+          <p class="slogan">WHERE IDEAS MEET DESIGN</p>
+          <div class="arrow-circle">
+            <span class="arrow-icon">➜</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="column col-right">
+      
+      <!-- Heading -->
+      <div class="heading-row">
+        <h2>Design is how I make <br><span>thoughts</span> visible</h2>
+      </div>
+
+      <!-- Description -->
+      <div class="description-row">
+        <p>
+          Every project I take on is more than just a task, it's a creative journey.<br><br>
+          It's where color, form, and imagination merge to craft stories that resonate.<br><br>
+          This portfolio isn't just a showcase of work, it's a collection of bold ideas brought to life, 
+          where passion meets precision and creativity turns vision into reality.
+        </p>
+      </div>
+
+      <!-- Icon Boxes -->
+      <div class="icon-box-row">
+        <div class="icon-box">Photoshop</div>
+        <div class="icon-box">Illustrator</div>
+        <div class="icon-box">After Effects</div>
+        <div class="icon-box">Premiere Pro</div>
+        <div class="icon-box">Figma</div>
+      </div>
+
+      <p class="inspired-text">INSPIRED BY EVERYDAY</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Section 3 -->
+<section id="section3" class="service-section">
+  <h2 class="section-heading">Comprehensive <span>Service</span> Offerings</h2>
+
+
+
+  <div class="card-slider-wrapper">
+    <!-- Background Shadows -->
+    <img src="Images/EllipseShadow.png" alt="Shadow Base" class="shadow-base" />
+    <img src="Images/EllipseShadow2.png" alt="Shadow Overlay" class="shadow-overlay" />
+
+    <!-- 3D Grid Floor -->
+    <div class="grid-floor"></div>
+
+    <!-- Carousel Container -->
+    <div class="card-carousel">
+
+        <!-- Card 1 -->
+        <div class="card card-left">
+        <div class="blob-image-container blob-left"></div>
+        <h3>Graphics Designing</h3>
+        <p>Our Hardware Solutions service provides top-notch hardware tailored to your business needs. We offer installation, and a support for a wide range of equipmen.</p>
+        <button class="learn-more-btn">Learn more ➜</button>
+        </div>
+
+
+        <!-- Card 2 -->
+        <div class="card card-center">
+        <div class="blob-image-container blob-center"></div>
+        <h3>Video Editing</h3>
+        <p>Our Software Solution service offers custom, high-quality software to meet your business needs, enhancing efficiency and driving growth.</p>
+        <button class="learn-more-btn">Learn more ➜</button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card card-right">
+        <div class="blob-image-container blob-right"></div>
+        <h3>UI/UX Designing</h3>
+        <p>Our Innovative Solutionsservice offers creative and cutting-edge strategies to solve complex business challenges.</p>
+        <button class="learn-more-btn">Learn more ➜</button>
+        </div>
+
+
+
+    </div>
+
+    <!-- Arrows -->
+    <div class="arrow sec3-arrow-left">←</div>
+    <div class="arrow sec3-arrow-right">→</div>
+
+    <!-- Slidebar -->
+    <div class="slider-line-wrapper">
+    <div class="slider-line-track">
+        <div class="slider-line-indicator"></div>
+    </div>
+    </div>
+  
+    <div class="grid-3d-container"></div>
+
+</section>
+
+
+</body>
+</html>
