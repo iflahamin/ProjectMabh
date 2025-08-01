@@ -21,6 +21,21 @@ a {
   color: white;
 }
 
+/* Remove tap highlight on mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Remove blue glow on click/focus */
+button,
+input,
+textarea,
+a {
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
 /* Header */
 .header {
   position: fixed;
@@ -121,7 +136,7 @@ a {
 .mobile-link {
   margin: 1rem 0;
   padding: 0.5rem 2rem;
-  border: 0.125rem solid #ff00cc;
+  border: 1px solid #ff00cc;
   border-radius: 9999px;
   color: white;
   font-size: 1.5rem;
