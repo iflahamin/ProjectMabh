@@ -85,6 +85,13 @@ a {
   left: 50%;
   transform: translateX(50%);
 }
+/* Mobile view fix */
+@media (max-width: 768px) {
+  .logo img {
+    left: 0;
+    transform: none;
+  }
+}
 
 /* Hamburger */
 .hamburger {
