@@ -1383,4 +1383,13 @@ textarea::placeholder {
   .contact-form, .contact-left {
     max-width: 100%;
   }
+  .info-item h3 {
+    font-size: 1rem;
+  }
+  .info-item p {
+    font-size: 0.5rem;
+  }
+  .contact-form {
+    padding: 1rem;
+  }
 }
