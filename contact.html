@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- Header (copy your existing header/navbar HTML here) -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="index.html#section1" class="nav-link">Home</a>
+        <a href="index.html#section2" class="nav-link">About</a>
+      </div>
+
+      <div class="logo">
+        <img src="Images/logo.png" alt="Logo" />
+      </div>
+
+      <div class="nav-right">
+        <a href="index.html#section3" class="nav-link">Services</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+      </div>
+
+      
+      <!-- Hamburger -->
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars" id="hamburgerIcon"></i>
+      </div>
+
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#section1" class="mobile-link">Home</a>
+      <a href="#section2" class="mobile-link">About</a>
+      <a href="#section3" class="mobile-link">Services</a>
+      <a href="contact.html" class="mobile-link">Contact Us</a>
+
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+ <section class="contact-section">
+    <!-- Row 1: Heading -->
+    <div class="contact-heading">
+        <img src="Images/PinkEllipse.png" alt="Img" class="heading-bg" />
+        <h1>Contact us</h1>
+        <p>Start the conversation to establish good relationship and business.</p>
+    </div>
+
+    <!-- Row 2: 2 Columns -->
+    <div class="contact-content">
+      <!-- Left Column -->
+      <div class="contact-left">
+        <p class="sub-label">GET IN TOUCH</p>
+        <h2>Seamless Communication, Global Impact.</h2>
+        <p class="description">[Add your description here]</p>
+        <hr class="divider"/>
+
+        <!-- Info Grid -->
+        <div class="info-grid">
+          <div class="info-item">
+            <i class="fas fa-location-dot"></i>
+            <div>
+              <h4>HEAD OFFICE</h4>
+              <p>Jln Cempaka Wangi No 22<br>Jakarta - Indonesia</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone-volume"></i>
+            <div>
+              <h4>LET'S TALK</h4>
+              <p>Phone : +6221.2002.2012<br>Fax : +6221.2002.2013</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h4>EMAIL SUPPORT</h4>
+              <p>support@yourdomain.tld<br>hello@yourdomain.tld</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <h4>WORKING HOURS</h4>
+              <p>Monday - Friday<br>07am - 09pm</p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="divider"/>
+
+        <!-- Social Media -->
+        <p class="follow-label">Follow our social media</p>
+        <div class="social-icons">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-dribbble"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-linkedin-in"></i>
+          <i class="fab fa-youtube"></i>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="contact-form">
+        <h3>Send us a message</h3>
+        <p>Please feel free to send us any questions, feedback or suggestions you might have.</p>
+
+        <form id="contactForm" autocomplete="off">
+            <div class="form-row two-col">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Name" required />
+                    <small class="error-message"></small>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="company" placeholder="Company" />
+                    <small class="error-message"></small>
+                </div>
+            </div>
+
+            <div class="form-row two-col">
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Phone" />
+                    <small class="error-message"></small>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email" required />
+                    <small class="error-message"></small>
+                </div>
+            </div>
+
+            <div class="form-row two-col">
+                <div class="form-group">
+                    <input type="text" name="subject1" placeholder="Subject" />
+                    <small class="error-message"></small>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="subject2" placeholder="Subject" />
+                    <small class="error-message"></small>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <textarea name="message" rows="4" placeholder="Message" required></textarea>
+                    <small class="error-message"></small>
+                </div>
+            </div>
+
+            <button type="submit" class="send-button">
+                <i class="fas fa-paper-plane"></i> SEND MESSAGE
+            </button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -116,3 +116,113 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   updateCards();
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Contact Page
+
+// Form Validation
+document.getElementById('contactForm').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const form = this;
+  let valid = true;
+
+  const fields = [
+    { name: "name", required: true },
+    { name: "email", required: true, type: "email" },
+    { name: "phone", required: false, type: "phone" },
+    { name: "company", required: false },
+    { name: "subject1", required: false },
+    { name: "subject2", required: false },
+    { name: "message", required: true }
+  ];
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phoneRegex = /^[\d+\-\s]{7,15}$/;
+
+  // Clear old errors
+  form.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
+  form.querySelectorAll('input, textarea').forEach(el => el.classList.remove('error'));
+
+  const getField = (name) => form.querySelector(`[name="${name}"]`);
+
+  // Validate fields
+  for (const field of fields) {
+    const input = getField(field.name);
+    if (!input) continue;
+
+    const value = input.value.trim();
+    const errorEl = input.parentElement.querySelector('.error-message');
+
+    if (field.required && value === "") {
+      errorEl.textContent = "This field is required.";
+      errorEl.style.display = "block";
+      input.classList.add('error');
+      valid = false;
+    } else if (field.type === "email" && value && !emailRegex.test(value)) {
+      errorEl.textContent = "Enter a valid email.";
+      errorEl.style.display = "block";
+      input.classList.add('error');
+      valid = false;
+    } else if (field.type === "phone" && value && !phoneRegex.test(value)) {
+      errorEl.textContent = "Enter a valid phone number.";
+      errorEl.style.display = "block";
+      input.classList.add('error');
+      valid = false;
+    }
+  }
+
+  // Require at least one subject
+  const s1 = getField("subject1")?.value.trim();
+  const s2 = getField("subject2")?.value.trim();
+  if (s1 === "" && s2 === "") {
+    const input = getField("subject1");
+    const errorEl = input?.parentElement.querySelector('.error-message');
+    errorEl.textContent = "Enter at least one subject.";
+    errorEl.style.display = "block";
+    input.classList.add('error');
+    valid = false;
+  }
+
+  if (!valid) return;
+
+  // ✅ If valid, send form (replace URL below with your backend endpoint)
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch("https://your-backend-url.com/submit-form", {
+      method: "POST",
+      body: formData
+    });
+
+    if (response.ok) {
+      alert("Message sent successfully!");
+      form.reset();
+    } else {
+      alert("Something went wrong. Please try again later.");
+    }
+  } catch (err) {
+    alert("Failed to send. Please check your connection.");
+  }
+});
