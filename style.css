@@ -3,10 +3,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* outline: 1px solid red; */
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -1198,6 +1200,7 @@ a {
   padding: 0.3rem 1rem;
   border-radius: 2rem;
 }
+
 .hire-cta:hover{
   border: 1px solid #ff00cc;
 }
@@ -1382,28 +1385,12 @@ a {
 /* ---------- Responsive ---------- */
 
 @media (max-width: 768px) {
-  /* Row 3: Metrics */
-  .section4-row3 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "item1 item2"
-      "item3 item4"
-      "item5 item5";
-    gap: 1.5rem;
+  .section4-heading h2 {
+    font-size: 2rem;
+  margin-bottom: -1rem;
   }
 
-  .section4-row3 .metric:nth-child(1) { grid-area: item1; }
-  .section4-row3 .metric:nth-child(2) { grid-area: item2; }
-  .section4-row3 .metric:nth-child(3) { grid-area: item3; }
-  .section4-row3 .metric:nth-child(4) { grid-area: item4; }
-  .section4-row3 .metric:nth-child(5) {
-    grid-area: item5;
-    justify-self: center;
-    text-align: center;
-  }
-
-  /* Row 2: Left and Right columns stack vertically */
+ /* Row 2: Left and Right columns stack vertically */
   .section4-row2 {
     display: grid;
     grid-template-columns: 1fr;
@@ -1415,9 +1402,54 @@ a {
     width: 100%;
     max-width: 100%;
   }
+  
+
+  .hire-box {
+    text-align: center; /* Center inline content */
+  }
+
+  .hire-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.1rem;
+    border: 1px solid #fff;
+    border-radius: 2rem;
+    margin: 0 auto 2rem auto; /* Center horizontally */
+  }
+
+  .hire-points {
+    text-align: left; /* Keep points left-aligned */
+    margin-top: 1rem;
+  }
+
+  .hire-points li {
+    display: grid;
+    grid-template-columns: 15rem auto; /* Fixed icon width for alignment */
+    column-gap: 2rem;
+  }
+
+  .hire-points i {
+    justify-self: start; /* Ensure icons align left within fixed width */
+  }
 
   .image-carousel-wrapper {
     align-items: center;
+  }
+
+  .image-carousel-box {
+    width: 85%;     /* ⬅️ shrink the box */
+    margin: 0 auto; /* ⬅️ center it */
+  }
+
+  .carousel-shadow {
+    width: 110%;
+    bottom: 0.9rem;
+  }
+
+  .carousel-img {
+    height: 180px;  /* reduce height slightly if needed */
   }
 
   .carousel-indicator {
@@ -1425,21 +1457,36 @@ a {
     padding-left: 0;
   }
 
-  /* Headings and other adjustments */
-  .section4-heading h2 {
-    font-size: 2rem;
+    /* Row 3: Metrics */
+  .section4-row3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "item1 item2"
+      "item3 item4"
+      "item5 item5";
+    gap: 1.5rem;
+  }
+  .section4-row3 .metric {
+    justify-self: center;
+    text-align: center;
+  }
+  .section4-row3 .metric:nth-child(1) { grid-area: item1; }
+  .section4-row3 .metric:nth-child(2) { grid-area: item2; }
+  .section4-row3 .metric:nth-child(3) { grid-area: item3; }
+  .section4-row3 .metric:nth-child(4) { grid-area: item4; }
+  .section4-row3 .metric:nth-child(5) { grid-area: item5; }
+
+  .metric p{
+    font-size: 0.85rem;
   }
 
-  .carousel-img {
-    height: 200px;
+  .metric .highlight{
+    font-size: 0.9rem;
   }
 
-  .metric .highlight {
-    font-size: 1.2rem;
-  }
-
-  .carousel-shadow {
-    width: 150%;
+  .tagline {
+    font-size: 0.85rem;
   }
 }
 
