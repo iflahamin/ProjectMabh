@@ -1437,6 +1437,10 @@ a {
   .metric .highlight {
     font-size: 1.2rem;
   }
+
+  .carousel-shadow {
+    width: 150%;
+  }
 }
 
 
