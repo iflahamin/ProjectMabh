@@ -95,6 +95,46 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// Typing Effect
+
+  const phrases = ["Passion", "Pixels", "Purpose"];
+  const typingElement = document.querySelector(".typing-text");
+  const typingSpeed = 100;
+  const erasingSpeed = 50;
+  const delayBetween = 1500;
+
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function typeEffect() {
+    const currentPhrase = phrases[phraseIndex];
+
+    if (isDeleting) {
+      typingElement.textContent = currentPhrase.substring(0, charIndex--);
+      if (charIndex < 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        setTimeout(typeEffect, 500);
+      } else {
+        setTimeout(typeEffect, erasingSpeed);
+      }
+    } else {
+      typingElement.textContent = currentPhrase.substring(0, charIndex++);
+      if (charIndex > currentPhrase.length) {
+        isDeleting = true;
+        setTimeout(typeEffect, delayBetween);
+      } else {
+        setTimeout(typeEffect, typingSpeed);
+      }
+    }
+  }
+
+  // Start typing effect on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(typeEffect, 1000);
+  });
+
 
 
 // Page 3
@@ -136,6 +176,32 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// Section 4
+// Image Carousal
+document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll(".carousel-img");
+  const indicator = document.querySelector(".carousel-indicator");
+  let currentIndex = 0;
+  const totalImages = images.length;
+
+  function showSlide(index) {
+    images.forEach((img, i) => {
+      img.classList.toggle("active", i === index);
+    });
+    indicator.innerHTML = `0${index + 1}<sup>/0${totalImages}</sup>`;
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalImages;
+    showSlide(currentIndex);
+  }
+
+  // Initial display
+  showSlide(currentIndex);
+
+  // Auto-slide every 3 seconds
+  setInterval(nextSlide, 3000);
+});
 
 
 
