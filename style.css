@@ -1387,7 +1387,7 @@ a {
 @media (max-width: 768px) {
   .section4-heading h2 {
     font-size: 2rem;
-  margin-bottom: -1rem;
+    margin-bottom: -1rem;
   }
 
  /* Row 2: Left and Right columns stack vertically */
@@ -1483,6 +1483,8 @@ a {
 
   .metric .highlight{
     font-size: 0.9rem;
+    display: flex;
+    align-items: start;
   }
 
   .tagline {
