@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleMenu = () => {
     mobileMenu.classList.toggle("show");
 
-    // Switch icon
     if (mobileMenu.classList.contains("show")) {
       hamburgerIcon.classList.remove("fa-bars");
       hamburgerIcon.classList.add("fa-times");
@@ -41,16 +40,22 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleMenu();
   });
 
+  // Close menu when clicking outside content or on overlay bg
   document.addEventListener("click", () => {
     if (mobileMenu.classList.contains("show")) {
       toggleMenu();
     }
   });
 
-  mobileMenu.addEventListener("click", (e) => {
-    e.stopPropagation(); // Prevent closing when clicking inside
-  });
+  // Prevent close when clicking on the menu content only
+  const menuContent = document.querySelector(".mobile-menu-content");
+  if (menuContent) {
+    menuContent.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  }
 
+  // Close menu when clicking on any link inside
   document.querySelectorAll(".mobile-link").forEach(link => {
     link.addEventListener("click", toggleMenu);
   });
@@ -203,8 +208,60 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(nextSlide, 3000);
 });
 
-// Section 5
-// Scrollbar
+// Section 6
+// Form Validation
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("section6ContactForm");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const groups = form.querySelectorAll(".field-group");
+      let isValid = true;
+
+      groups.forEach(group => {
+        const input = group.querySelector("input, textarea");
+        const errorSpan = group.querySelector(".error-msg");
+        const value = input.value.trim();
+        let error = "";
+
+        // Reset previous error state
+        input.classList.remove("error-field");
+        errorSpan.textContent = "";
+        errorSpan.style.display = "none";
+
+        if (!value) {
+          error = "This field is required.";
+        } else if (input.type === "email") {
+          const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/i;
+          if (!emailPattern.test(value)) {
+            error = "Invalid email address.";
+          }
+        } else if (input.placeholder === "Phone") {
+          const phonePattern = /^[0-9+\-()\s]{7,20}$/;
+          if (!phonePattern.test(value)) {
+            error = "Invalid phone number.";
+          }
+        }
+
+        if (error) {
+          input.classList.add("error-field");
+          errorSpan.textContent = error;
+          errorSpan.style.display = "block";
+          isValid = false;
+        }
+      });
+
+      if (isValid) {
+        console.log("Form submitted successfully!");
+        form.reset();
+        form.querySelectorAll(".error-msg").forEach(msg => msg.style.display = "none");
+      }
+    });
+  });
+
+
 
 
 
@@ -316,3 +373,4 @@ document.getElementById('contactForm').addEventListener('submit', async function
     alert("Failed to send. Please check your connection.");
   }
 });
+
