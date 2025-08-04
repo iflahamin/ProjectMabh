@@ -203,6 +203,12 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(nextSlide, 3000);
 });
 
+// Section 5
+// Scrollbar
+
+
+
+
 
 
 
