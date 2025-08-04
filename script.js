@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const targetY = target.getBoundingClientRect().top + window.scrollY;
       const startY = window.scrollY;
       const distance = targetY - startY;
-      const duration = 1000;
+      const duration = 300;
       let startTime = null;
 
       function easeInOutQuad(t) {
