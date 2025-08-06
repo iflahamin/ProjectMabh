@@ -161,7 +161,8 @@ a {
 
 /* === Hero Section === */
 .hero-section {
-  height: 100vh;
+  /* height: 100vh; */
+  min-height: auto;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -423,71 +424,13 @@ a {
   background-image: url('Images/Sec1Img.png'); /* Replace */
 }
 
-/* === Responsive Adjustments === */
-@media (max-width: 768px) {
-  .nav-left,
-  .nav-right {
-    display: none;
-  }
 
-  .hamburger {
-    display: flex;
-  }
-
-  .mobile-menu.show {
-    display: flex;
-  }
-
-  .hero-section {
-    flex-direction: column;
-    padding: 5rem 1rem 2rem;
-  }
-
-  .glow-left,
-  .glow-right {
-    top: 40%;
-  }
-
-  .left-content,
-  .right-content {
-    position: static;
-    width: 100%;
-    padding: 2rem 1rem;
-    align-items: center;
-    text-align: center;
-  }
-
-  .left-bottom,
-  .right-bottom {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .left-stats-row,
-  .right-middle {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .right-bottom {
-    gap: 1.5rem;
-  }
-
-  .pill-boxes {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .right-col1 {
-    max-width: 90%;
-  }
-}
 /* Middle Part */
 /* Wrapper for the orbiting layout */
 .concentric-wrapper {
   position: relative;
   width: 100%;
-  max-width: 50vw;
+  max-width: 35vw;
   aspect-ratio: 1 / 1;
   margin: 0 auto;
   display: flex;
@@ -635,8 +578,21 @@ a {
   }
 }
 
+
 /* Responsive tweaks */
-@media (max-width: 600px) {
+@media (max-width: 768px) and (orientation: portrait) {
+  .nav-left,
+  .nav-right {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-menu.show {
+    display: flex;
+  }
 
   .hero-section {
     display: flex;
@@ -645,19 +601,15 @@ a {
     justify-content: start;
     padding: 5rem 1rem 3rem;
     /* gap: 0.5rem; */
-    min-height: 120vh;
+    /* min-height: 120vh; */
   
   /* Reorder columns */
   .concentric-wrapper {
     order: 1;
   }
 
-  .left-content {
+  .left-combined-row{
     order: 2;
-  }
-
-  .right-content {
-    order: 3;
   }
 
 }
@@ -739,10 +691,10 @@ a {
     text-align: center;
   }
 
-.right-col2 .bg-box {
-  width: 90%;
-  aspect-ratio: 2 / 1;
-}
+  .right-col2 .bg-box {
+    width: 90%;
+    aspect-ratio: 2 / 1;
+  }
 
 
   /* Middle */
@@ -802,7 +754,68 @@ a {
 
 }
 
+@media screen and (max-width: 1024px) and (orientation: landscape) {
 
+  .glow-left,
+  .glow-right {
+    top: 70%;
+    max-width: 30vw;
+    opacity: 0.5;
+  }
+
+  /* Left Content */
+  .left-tagline {
+    font-size: 0.8rem;
+  }
+
+  /* Right Content */
+  .right-bottom {
+    flex-direction: column;
+    align-items: end;
+  }
+
+  .right-col1 {
+    max-width: 100%;
+    text-align: end;
+  }
+
+  /* Middle */
+  .concentric-wrapper {
+    max-width: 60vw;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+  }
+
+  .orbit1{
+    width: 18vw;
+    height: 18vw;
+  }
+  .orbit2{
+    width: 30vw;
+    height: 30vw;
+  }
+  .orbit3 {
+    width: 40vw;
+    height: 40vw;
+  }
+
+
+  .center-heading {
+    top: 35%;
+    padding: 0 1rem;
+  }
+
+  .center-heading h3 {
+    font-size: 1.2rem;
+  }
+
+  .bottom-center-icon {
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+}
 
 
 /* Section 2 Base */
@@ -911,7 +924,6 @@ a {
   font-size: 0.9rem;
   font-family: 'Gilroy-Regular';
   transition: all 0.3s ease;
-
 }
 
 .icon-box:hover {
@@ -927,7 +939,7 @@ a {
 }
 
 /* ---------- MOBILE VIEW: Section 2 ---------- */
-@media (max-width: 600px) {
+@media (max-width: 768px) and (orientation: portrait) {
   .section2-container {
     display: flex;
     flex-direction: column-reverse; /* Show right column first, then image */
@@ -994,8 +1006,16 @@ a {
     align-self: flex-end;
   }
 }
+  @media screen and (max-width: 1024px) and (orientation: landscape) {
+    .icon-box-row {
+      margin-top: 6rem;
+    }
 
-
+    .icon-box {
+      padding: 0.3rem 1rem;
+      font-size: 0.8rem;
+    }
+}
 
 /* ---------- SECTION 3 CONTAINER ---------- */
 .service-section {
@@ -1229,10 +1249,49 @@ a {
   transition: transform 0.4s ease;
 }
 
+/* ---------- 3D GRID FLOOR ---------- */
+.grid-3d-container {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  height: 100%;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  z-index: 0;
+}
 
+.grid-3d-container::after {
+  content: "";
+  position: absolute;
+  bottom: -25.5rem;
+  left: 50%;
+  transform: translateX(-50%) rotateX(80deg);
+  transform-origin: top center;
+  width: 180%;
+  height: 30rem;
+  background-image: 
+  repeating-linear-gradient(
+    to right, 
+    rgba(69, 227, 255, 0.4) 0, 
+    rgba(69, 227, 255, 0.4) 2px, 
+    transparent 0.5rem, 
+    transparent 2.8rem
+  ),
+  repeating-linear-gradient(
+    to top, 
+    rgba(255, 0, 204, 0.4) 0, 
+    rgba(255, 0, 204, 0.4) 2px, 
+    transparent 0.5rem, 
+    transparent 2.8rem
+  );
+  z-index: 0;
+  opacity: 0.3;
+  pointer-events: none;
+  filter: drop-shadow(0 0 8px #45e3ff66);
+}
 
 /* ---------- RESPONSIVE ---------- */
-@media (max-width: 600px) {
+@media (max-width: 768px) and (orientation: portrait){
   .shadow-base,.shadow-overlay {
     bottom: 15%;
     width: 120%;
@@ -1306,10 +1365,15 @@ a {
   .arrow {
     display: none;
   }
-
-  /* .blob-image-container {
+}
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .shadow-base,.shadow-overlay {
+    bottom: 15%;
+    width: 120%;
+  }
+  .arrow {
     display: none;
-  } */
+  }
 }
 
 
@@ -1536,13 +1600,14 @@ a {
 
 
 .tagline {
+  max-width: 80%;
   font-size: 1rem;
   line-height: 1.3;
 }
 
 /* ---------- Responsive ---------- */
 
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait) {
   .section4-heading h2 {
     font-size: 2rem;
     margin-bottom: -1rem;
@@ -1646,13 +1711,60 @@ a {
   }
 
   .tagline {
+    max-width: 100%;
     font-size: 0.85rem;
+  }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+
+ /* Row 2: Left and Right columns stack vertically */
+
+   .image-carousel-wrapper {
+    align-items: end;
+    justify-content: end;
+  }
+
+  .image-carousel-box {
+    width: 115%;    
+    margin: 0 5% 0 0; 
+  }
+
+  .carousel-shadow {
+    width: 170%;
+    left: 100px;
+    bottom: -30px;
+  }
+
+  .carousel-img {
+    height: 180px;  
+  }
+
+  /* Row 3: Metrics */
+  .section4-row3 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 equal columns */
+    gap: 1.5rem;
+  }
+
+  .section4-row3 .metric {
+    text-align: center;
+  }
+
+
+  .metric p{
+    font-size: 0.8rem;
+  }
+
+  .tagline {
+    max-width: 100%;
+    font-size: 0.8rem;
   }
 }
 
 /* ---------- SECTION 5 ---------- */
 .section5 {
-  height: 100vh;
+  /* height: 100vh; */
   background: #000;
   color: white;
   display: flex;
@@ -1822,9 +1934,11 @@ a {
 /* ---------- Responsive Layout ---------- */
 @media screen and (max-width: 768px) {
   .section5 {
-    min-height: 100vh;
-    margin-bottom: 3rem;
     position: relative;
+  }
+
+  .section5-heading {
+    font-size: 1.3rem;
   }
 
   .section5-row2 {
@@ -1883,16 +1997,14 @@ a {
   }
 
   .left-mobile-shadow {
-    top: 40%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
-  .right-mobile-shadow {
-    top: 80%;
-    right: 50%;
-    transform: translate(50%, -50%);
-  }
+  /* .right-mobile-shadow {
+    display: none;
+  } */
 
   .section5-shadow-bg {
     display: none;
@@ -1905,7 +2017,7 @@ a {
   .section5-row2 {
     height: 100%;
     max-height: 400px;
-}
+  }
 
   .left-box {
     width: 35%;
@@ -1917,12 +2029,28 @@ a {
     max-width: 60%;
   }
 
-  /* Hide mobile shadows on desktop */
   .left-mobile-shadow {
     display: none;
   }
-    .right-mobile-shadow {
-    display: none;
+
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .left-box {
+    width: 60%;
+    max-width: 60%;
+  }
+
+    .left-mobile-shadow {
+    max-width: 50%;
+    top: 29%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .right-box {
+    width: 60%;
+    max-width: 60%;
   }
 }
 
@@ -2195,7 +2323,24 @@ a {
   }
 }
 
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  /* Right Column Form */
+  .section6-form {
+    max-width: 90%;
+    padding: 2rem;
+    align-self: center;
+  }
 
+  .section6-form p {
+    max-width: 100%;
+  }
+
+  .section6-two-col {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+}
 
 
 

@@ -143,6 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Page 3
+// Card Carousal
 document.addEventListener("DOMContentLoaded", () => {
   const leftArrow = document.querySelector('.sec3-arrow-left');
   const rightArrow = document.querySelector('.sec3-arrow-right');
